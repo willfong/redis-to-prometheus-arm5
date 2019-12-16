@@ -37,6 +37,6 @@ func HandleMetrics(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			log.Fatal(err)
 		}
-		fmt.Fprintf(w, "%s: %s\n", k, v)
+		fmt.Fprintf(w, "%s %s\n", k, v)
 	}
 }
