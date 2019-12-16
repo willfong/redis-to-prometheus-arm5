@@ -6,6 +6,6 @@ RUN go install -v ./...
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=arm GOARM=5 go build -o main .
 
 FROM scratch
-COPY --from=build /go/src/app/main /app/main
+COPY --from=build /go/src/app/main /main
 EXPOSE 8080
-ENTRYPOINT [ "/app/main" ]
+ENTRYPOINT [ "/main" ]
